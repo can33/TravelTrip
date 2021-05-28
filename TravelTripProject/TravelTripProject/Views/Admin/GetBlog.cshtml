@@ -1,0 +1,45 @@
+﻿@model TravelTripProject.Models.EntityFramework.Blog
+@{
+    ViewBag.Title = "GetBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h2>Blog Güncelleme Sayfası</h2>
+@using (Html.BeginForm("UpdateBlog","Admin",FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.ID)
+        @Html.TextBoxFor(m => m.ID, new { @class = "form-control",@readonly="readonly" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Heading)
+        @Html.TextBoxFor(m => m.Heading, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, "{0:yyyy-MM-dd}", new
+        {
+       @class = "form-control",
+       type = "date",
+       onchange = "CheckDateTypeIsValid(this)"
+        })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.BlogImage)
+        @Html.TextAreaFor(m => m.BlogImage, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description,10,1, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Yeni Blog Güncelle</button>
+
+
+
+}
+
+

@@ -1,0 +1,14 @@
+﻿@model TravelTripProject.Models.EntityFramework.Comment
+
+<div class="content-form">
+        <h3>Yorum Yap</h3>
+
+        <form method="post">
+            <input type="text" placeholder="ID" name="BlogId" value="@ViewBag.deger" required />
+            <input type="text" placeholder="Kullanıcı Adı" name="UserName" required />
+            <input type="text" placeholder="Mail Adresi" name="Mail" />
+            <textarea placeholder="Yorum" name="YComment"></textarea>
+            <input type="submit" value="Gönder" />
+        </form>
+</div>
+

@@ -1,0 +1,97 @@
+﻿@using TravelTripProject.Models.EntityFramework
+@model List<Blog>
+<div class="con-bot">
+    @foreach (var blog in Model)
+    {
+        <div class="right">
+            <div class="bot-left">
+                <img src="@blog.BlogImage" alt="" style="width:700px;height:200px;" />
+            </div>
+            <div class="left-text">
+                <h4>@blog.Heading</h4>
+                <span class="doller">@blog.Date.ToString("dd/MM/yyyy")</span>
+                <p>@blog.Description.Substring(0, 75)</p>
+                <p><a href="/Blog/BlogDetails/@blog.ID"><span class="read">Devamını Oku >></span></a></p>
+            </div>
+        </div>
+    }
+    @*<div class="grids">
+        <div class="box1">
+           
+                <div class="padding">
+                    <h4>Bu haftanın 5'lisi</h4>
+                    <ul class="list list-pad">
+                        @foreach (var blog in Model)
+                        {
+                            <li class="list-bg"><a href="/Blog/BlogDetails/@blog.ID">@blog.Heading</a></li>
+                        }
+                        </ul>
+                    <a href="#" class="link1">See all hotels</a>
+                </div>
+            
+            <div class="padding1">
+                <h4>Our Best Places</h4>
+                <div class="box-left">
+                    <div class="bot-img">
+                        <img src="~/web/images/pic3.jpg" alt="" />
+                    </div>
+                    <div class="bot-desc">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="bot-img">
+                        <img src="~/web/images/pic7.jpg" alt="" />
+                    </div>
+                    <div class="bot-desc">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="bot-img">
+                        <img src="~/web/images/pic8.jpg" alt="" />
+                    </div>
+                    <div class="bot-desc">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="box1-left">
+                    <div class="bot-img">
+                        <img src="~/web/images/pic9.jpg" alt="" />
+                    </div>
+                    <div class="bot-desc1">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="bot-img">
+                        <img src="images/pic10.jpg" alt="" />
+                    </div>
+                    <div class="bot-desc1">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="bot-img">
+                        <img src="~/web/images/pic3.jpg" alt="" />
+                    </div>
+                    <div class="bot-desc1">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>*@
+    @*<div class="right">
+            <div class="bot-left">
+                <img src="~/web/images/pic2.jpg" alt="" />
+            </div>
+            <div class="left-text">
+
+                <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
+                <span class="doller">$924.99</span>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
+                <p><a href="#"><span class="read">Read More >></span></a></p>
+            </div>
+        </div>*@
+
+</div>

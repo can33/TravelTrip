@@ -1,0 +1,41 @@
+﻿
+@model TravelTripProject.Models.EntityFramework.Blog
+@{
+    ViewBag.Title = "AddBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h3>Yeni Blog Ekleme</h3>
+@using (Html.BeginForm("AddBlog", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Heading)
+        @Html.TextBoxFor(m => m.Heading, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, "{0:yyyy-MM-dd}", new
+        {
+       @class = "form-control",
+       type = "date",
+       onchange = "CheckDateTypeIsValid(this)"
+        })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.BlogImage)
+        @Html.TextAreaFor(m => m.BlogImage, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Yeni Blog Ekle</button>
+
+
+
+}
+
+

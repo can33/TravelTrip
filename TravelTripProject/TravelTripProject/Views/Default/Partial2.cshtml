@@ -1,0 +1,20 @@
+﻿@using TravelTripProject.Models.EntityFramework
+@model List<Blog>
+<div class="grids">
+    <div class="box1">
+
+        <div class="padding">
+            <h4>Bu haftanın 5'lisi</h4>
+            <ol class="list list-pad">
+                @{ int i = 0;}
+                @foreach (var blog in Model)
+                {
+                    <li class="list-bg"><span>@{i++;}@i.</span><a href="/Blog/BlogDetails/@blog.ID">@blog.Heading</a></li>
+                }
+            </ol>
+            <a href="/Blog/Index" class="link1" style="color:cornflowerblue">Daha fazlası...</a>
+        </div>
+        @Html.Action("Partial3", "Default")
+        <div class="clear"></div>
+    </div>
+</div>

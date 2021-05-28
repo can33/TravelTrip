@@ -1,0 +1,71 @@
+﻿@model TravelTripProject.Models.EntityFramework.BlogComment
+@{
+    ViewBag.Title = "BlogDetails";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var blogdetails in Model.Blogs)
+                {
+                    <div class="single-grid">
+                        <img src="@blogdetails.BlogImage" alt="" style="margin-bottom: 20px" />
+                        <h3>@blogdetails.Heading</h3>
+                        <p>
+                            @blogdetails.Description
+                        </p>
+                    </div>
+                }
+                @foreach (var blogcomment in Model.Comments)
+                {
+            <ul class="comment-list">
+                <img src="~/web2/images/avatar.png" class="img-circle" alt="" />
+                <h4 style="color:#00aeff">@blogcomment.UserName
+                 <span style=""color:#C2C1CB">@blogcomment.Mail</span></h4>
+                <li>
+
+                    <div class="desc">
+                        <p>@blogcomment.YComment</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+                }   
+                @Html.Action("AddComment","Blog")
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>Son Bloglar</h3>
+                    @foreach (var lastblog in Model.Blogs)
+                    {
+                        <ul>
+                            <li> <a href="/Blog/BlogDetails/@lastblog.ID">@lastblog.Heading</a></li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

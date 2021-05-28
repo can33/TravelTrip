@@ -1,0 +1,101 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+    <title>Gezi Blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/Content/navbarcss/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Content/navbarcss/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/web/js/jquery.min.js"></script>
+    <script src="~/web/js/responsiveslides.min.js"></script>
+
+    <link href="~/Content/footercss/footer.css" rel="stylesheet" />
+
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header" >
+            <div class="wrap">
+                
+                <div class="con-right">
+                    <div class="grid1-l-img">
+                        <img src="~/web/images/contact.png" alt="">
+                    </div>
+                    <div class="grid1-l-desc">
+                        <p>WhatsApp : +91 00000-55555</p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    <div class="header-bottom">
+            <div class="wrap">
+                <ul id="nav">
+                    <li><a href="~/Default/Index">Ana sayfa</a></li>
+                    <li><a class="hsubs" href="/About/Index">Hakkımızda</a></li>
+                    <li>
+                        <a class="hsubs" href="destinations.html">Gezi Öneri</a>
+                        <ul class="subs">
+                            <li><a href="#">Oteller</a></li>
+                            <li><a href="#">Restoranlar</a></li>
+                            <li><a href="#">Müzeler</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="hsubs" href="/Blog/Index">Blogum</a></li>
+                    <li><a href="/Contact/Index">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    <div class"content">
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="footer-dark>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+            <div class="container" style="height:50px;">
+                <ul class="foote_bottom_ul_amrc">
+                    <li><a href="/Default/Index">Ana Sayfa</a></li>
+                    <li><a href="/About/Index">Hakkında</a></li>
+                    <li><a href="/Blog/Index">Blog</a></li>
+                    <li><a href="/About/Contact">İletişim</a></li>
+                    <li><a href="/Login/Login">Admin Giriş</a></li>
+                </ul>
+
+                <p class="text-center">@@2021</p>
+
+                <ul class="social_footer_ul">
+                    <li><a href="https://twitter.com/Can_Kecef"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/can_kecef1/"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

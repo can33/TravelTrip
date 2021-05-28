@@ -1,0 +1,20 @@
+﻿@using TravelTripProject.Models.EntityFramework
+    @model  List<Blog>
+    <div class="grids">
+        <div class="panel-default">
+            <div class="box-left">
+                @foreach (var blog in Model)
+                {
+                    <div class="bot-img">
+                        <img src="@blog.BlogImage" alt="" />
+                    </div>
+                    <div class="bot-desc">
+                        <p>@blog.Description.Substring(0,75)</p>
+                    </div>
+                    <div class="clear"></div>
+                }
+
+            </div>
+            @Html.Action("Partial4","Default")
+        </div>
+    </div>

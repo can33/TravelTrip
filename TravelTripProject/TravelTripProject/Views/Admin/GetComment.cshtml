@@ -1,0 +1,42 @@
+﻿@using TravelTripProject.Models.EntityFramework
+@model List<Comment>
+
+@{
+    ViewBag.Title = "GetComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="container" style="width:100%;">
+    <h2 style="text-align:start;font-size:xx-large">Comment List</h2>
+    <table class="table table-hover" style="width:100%;">
+        <thead style="background-color:black">
+            <tr style="color:white">
+                <th>ID</th>
+                <th>Username</th>
+                <th>Mail</th>
+                <th>YComment</th>
+                <th>BlogId</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+                
+                
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var comment in Model)
+            {
+                <tr>
+                    <td>@comment.ID</td>
+                    <td>@comment.UserName</td>
+                    <td>@comment.Mail</td>
+                    <td>@comment.YComment</td>
+                    <td>@comment.Blog.Heading</td>
+                    <td><a href="/Admin/DeleteComment/@comment.ID" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Admin/GetCommentAdmin/@comment.ID" class="btn btn-info">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
